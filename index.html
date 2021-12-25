@@ -10,21 +10,45 @@
 <!--JavaScript-->
 <script>
     let janKenPon = ['Rock', 'Paper', 'Scissors'];
+    let victoryOrLoss = ['Tie', 'Victory', 'Loss']
 
-    //Randomly returns rock, paper, or scissors
-    function computerPlay () { 
-        //Randomly selects between 0-2, and rounded up to a whole number
+    //randomly returns rock, paper, or scissors
+    function computerPlay() { 
+        //randomly selects between 0-2, and rounded up to a whole number
         let computerResult = Math.floor(Math.random()*3);
         console.log(computerResult)
 
-        //Returns rock, paper, or scissors based on the randomized result
+        //returns rock, paper, or scissors based on the randomized result
         return janKenPon[computerResult];
     }
 
+
+    //calculates victory or loss
+    function playRound(playerSelection, computerSelection) {
+        //if tie
+        if (playerSelection === computerSelection) {
+            return victoryOrLoss[0];
+        }
+        
+        //if player wins
+        else if (playerSelection === janKenPon[0] && computerSelection === janKenPon[2] || playerSelection === janKenPon[1] && computerSelection === janKenPon[0] || playerSelection === janKenPon[2] && computerSelection === janKenPon[1]) {
+            return victoryOrLoss[1];
+        }
+
+        //if computer wins
+        else if (playerSelection === janKenPon[0] && computerSelection === janKenPon[1] || playerSelection === janKenPon[1] && computerSelection === janKenPon[2] || playerSelection === janKenPon[2] && computerSelection === janKenPon[0]) {
+            return victoryOrLoss[2];
+        }
+    }
+
+    //
+    const playerSelection = janKenPon[0]
+
+    //Randomizes computer selection
     const computerSelection = computerPlay();
     console.log(computerSelection)
 
-
+    console.log(playRound(playerSelection, computerSelection))
 
 </script>
 
