@@ -9,14 +9,15 @@
 
 <!--JavaScript-->
 <script>
+    let playerScore = 0;
+    let computerScore = 0;
     let janKenPon = ['Rock', 'Paper', 'Scissors'];
-    let victoryOrLoss = ['Tie', 'Victory', 'Loss']
+    let victoryOrLoss = ['Tie', 'Victory', 'Loss'];
 
     //randomly returns rock, paper, or scissors
     function computerPlay() { 
         //randomly selects between 0-2, and rounded up to a whole number
         let computerResult = Math.floor(Math.random()*3);
-        console.log(computerResult)
 
         //returns rock, paper, or scissors based on the randomized result
         return janKenPon[computerResult];
@@ -32,23 +33,38 @@
         
         //if player wins
         else if (playerSelection === janKenPon[0] && computerSelection === janKenPon[2] || playerSelection === janKenPon[1] && computerSelection === janKenPon[0] || playerSelection === janKenPon[2] && computerSelection === janKenPon[1]) {
+            playerScore++
             return victoryOrLoss[1];
         }
 
         //if computer wins
         else if (playerSelection === janKenPon[0] && computerSelection === janKenPon[1] || playerSelection === janKenPon[1] && computerSelection === janKenPon[2] || playerSelection === janKenPon[2] && computerSelection === janKenPon[0]) {
+            computerScore++
             return victoryOrLoss[2];
         }
     }
 
-    //
-    const playerSelection = janKenPon[0]
+    function game() {
+        //
+        const playerSelection = janKenPon[0]
+        console.log(playerSelection)
 
-    //Randomizes computer selection
-    const computerSelection = computerPlay();
-    console.log(computerSelection)
+        //Randomizes computer selection
+        const computerSelection = computerPlay();
+        console.log(computerSelection)
 
-    console.log(playRound(playerSelection, computerSelection))
+        //inputs player and computer selection to determine winner
+        let result = playRound(playerSelection, computerSelection);
+        console.log(result)
+
+        console.log(playerScore)
+        console.log(computerScore)
+    }
+
+    //loops the game 5 times
+    for (let i=0; i<5; i++) {
+        game()
+    }
 
 </script>
 
