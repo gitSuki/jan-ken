@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box; /* Keeps box size consistent regardless of margin/padding/etc */
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none; /* Removes link underlines */
+}
+
+a {
+    color: inherit; /* Overrides blue color of links */
+}
+
+body { /* removes default margin and padding on body */
+    margin: 0px;
+    padding: 0px;
+}
+
+.selectionBox {
+    display: flex;
+    gap: 10px;
+}
+
+.rockBox,
+.paperBox,
+.scissorsBox {
+    padding: 15px;
+    background-color: #3882f6;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    width: 125px;
+    border-radius: 15px;
+}
