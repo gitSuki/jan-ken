@@ -1,8 +1,11 @@
 //JavaScript
+let gameActive = true
 let playerScore = 0;
 let computerScore = 0;
 let janKenPon = ['rock', 'paper', 'scissors'];
 let victoryOrLoss = ['tie', 'victory', 'loss'];
+
+const buttons = document.querySelectorAll('button')
 
 //randomly returns rock, paper, or scissors
 function computerPlay() { 
@@ -13,13 +16,23 @@ function computerPlay() {
     return janKenPon[computerResult];
 }
 
+//returns rock, paper, or scissors based on where the player clicked
+function userPlay(id) {
+    value = janKenPon[id]
+    console.log(value)
+    game(value, computerPlay())
+    return value
+}
+
 //asks the player to input rock, paper, or scissors
+/*
 function userPlay() {
     const playerInput = prompt(`The score is Player: ${playerScore} vs Computer: ${computerScore}. Input Rock, Paper, or Scissors`)
     //converts users inputted string to lower case to match janKen array
     const convertedInput = playerInput.toLowerCase()
     return convertedInput
 }
+*/
 
 //calculates victory or loss
 function playRound(playerSelection, computerSelection) {
@@ -41,19 +54,28 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    //asks the player to input rock, paper, or scissors
-    const playerSelection = userPlay(0)
-    console.log(playerSelection)
-
+function game(playerSelection) {
     //randomizes computer selection from computerPlay()
     const computerSelection = computerPlay();
-    console.log(computerSelection)
+    console.log(`The computer selected: ${computerSelection}`)
 
     //inputs player and computer selection to function to determine winner
     let result = playRound(playerSelection, computerSelection);
-    console.log(result)
+    console.log(`The result of this round is: ${result}`)
 
     console.log(playerScore)
     console.log(computerScore)
+
+    if (playerScore >= 5 || computerScore >= 5) {
+        gameActive = false;
+        console.log("The game is over")
+    }
 }
+
+//.forEach method runs through each button of the array
+buttons.forEach((button) => {
+    //and an eventListener is added to each button which will trigger the userPlay function
+    button.addEventListener('click', () => {
+      userPlay(button.id);
+    })
+})
