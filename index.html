@@ -4,36 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jan-ken</title>
+    <title>じゃんけん</title>
 
     <link rel="stylesheet" href="./styles.css">
-
 </head>
+
 <body>
-    <div class="gameBox">
-        <div class="roundHeader">
-            First to 5 wins!
-        </div>
-        <div class="scoreboard">
-            <div id="#playerScoreboard">
-                Player: 0
+    <div class="backgroundContainer">
+        <video class = "videoBackground" muted='' autoplay='' loop=''>
+            <source src ='./resources/HinamatsuriClip.mp4' type='video/mp4'>
+        </video>
+    </div>
+
+    <div class="header">じゃんけん! (Rock Paper Scissors)</div>
+    <div class="content">
+        <div class="leftColumn"></div>
+        <div class="gameBox">
+            <div class = "roundHeader" id="#roundHeader">
+                First to 5 wins!
             </div>
-            <div id="#computerScoreboard">
-                Computer: 0
+            <div class = "roundDisplay" id="#roundDisplay">
+                The round results will be displayed here!
+            </div>
+
+            <div class="scoreboard">
+                <div id="#playerScoreboard">
+                    Player: 0
+                </div>
+                <div id="#computerScoreboard">
+                    Computer: 0
+                </div>
+            </div>
+        
+            <div class="selectionBox">
+                <button id="0" class="rockBox">
+                    石 (パー)
+                    <br>Rock
+                </button>
+                <button id="1" class="paperBox">
+                    紙 (グー)
+                    <br>Paper
+                </button>
+                <button id="2" class="scissorsBox">
+                    鋏 (チョキ)
+                    <br>Scissors
+                </button>
             </div>
         </div>
+        <div class="rightColumn"></div>
+    </div>
     
-        <div class="selectionBox">
-            <button id="0" class="rockBox">
-                rock
-            </button>
-            <button id="1" class="paperBox">
-                paper
-            </button>
-            <button id="2" class="scissorsBox">
-                scissors
-            </button>
-        </div>
+    <div class="footer">
+        <a href="https://github.com/gitSuki">Built by: gitSuki</a>
+        <a href="https://en.wikipedia.org/wiki/Hinamatsuri_(manga)">Clip from: Hinamasturi</a>
     </div>
 </body>
 <!--JavaScript-->

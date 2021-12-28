@@ -1,14 +1,14 @@
 //JavaScript
-let gameActive = true
 let playerScore = 0;
 let computerScore = 0;
-let janKenPon = ['rock', 'paper', 'scissors'];
-let victoryOrLoss = ['tie', 'victory', 'loss'];
+let janKenPon = ['Rock', 'Paper', 'Scissors'];
+let victoryOrLoss = ['Tie', 'Victory', 'Loss'];
 
 const buttons = document.querySelectorAll('button')
 const playerScoreboard = document.getElementById('#playerScoreboard')
 const computerScoreboard = document.getElementById('#computerScoreboard')
-const roundHeader = document.querySelector('roundHeader')
+const roundHeader = document.getElementById('#roundHeader')
+const roundDisplay = document.getElementById('#roundDisplay')
 
 //randomly returns rock, paper, or scissors
 function computerPlay() { 
@@ -60,19 +60,23 @@ function playRound(playerSelection, computerSelection) {
 function game(playerSelection) {
     //randomizes computer selection from computerPlay()
     const computerSelection = computerPlay();
-    console.log(`The computer selected: ${computerSelection}`)
+    roundHeader.textContent = `The computer selected: ${computerSelection}`
 
     //inputs player and computer selection to function to determine winner
     let result = playRound(playerSelection, computerSelection);
-    console.log(`The result of this round is: ${result}`)
+    roundDisplay.textContent = `The result of this round is: ${result}`
 
     playerScoreboard.textContent = `Player: ${playerScore}`
     computerScoreboard.textContent = `Computer: ${computerScore}`
 
     if (playerScore >= 5 || computerScore >= 5) {
-        gameActive = false;
-        console.log("The game is over")
+        gameOver()
     }
+}
+
+function gameOver() {
+    confirm('Game Over!')
+    window.location.reload(false) //resets the page
 }
 
 //.forEach method runs through each button of the array
