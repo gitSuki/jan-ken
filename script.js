@@ -6,6 +6,9 @@ let janKenPon = ['rock', 'paper', 'scissors'];
 let victoryOrLoss = ['tie', 'victory', 'loss'];
 
 const buttons = document.querySelectorAll('button')
+const playerScoreboard = document.getElementById('#playerScoreboard')
+const computerScoreboard = document.getElementById('#computerScoreboard')
+const roundHeader = document.querySelector('roundHeader')
 
 //randomly returns rock, paper, or scissors
 function computerPlay() { 
@@ -63,8 +66,8 @@ function game(playerSelection) {
     let result = playRound(playerSelection, computerSelection);
     console.log(`The result of this round is: ${result}`)
 
-    console.log(playerScore)
-    console.log(computerScore)
+    playerScoreboard.textContent = `Player: ${playerScore}`
+    computerScoreboard.textContent = `Computer: ${computerScore}`
 
     if (playerScore >= 5 || computerScore >= 5) {
         gameActive = false;

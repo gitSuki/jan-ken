@@ -13,14 +13,19 @@ body { /* removes default margin and padding on body */
     padding: 0px;
 }
 
+.roundHeader {
+    text-align: center;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content:space-around; 
+}
+
 .selectionBox {
     display: flex;
     justify-content: center;
     gap: 10px;
-}
-
-.scoreboard {
-    text-align: center;
 }
 
 .rockBox,

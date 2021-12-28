@@ -9,28 +9,33 @@
     <link rel="stylesheet" href="./styles.css">
 
 </head>
-
-<div class="gameBox">
-    <div class="scoreboard">
-        The score is
+<body>
+    <div class="gameBox">
+        <div class="roundHeader">
+            First to 5 wins!
+        </div>
+        <div class="scoreboard">
+            <div id="#playerScoreboard">
+                Player: 0
+            </div>
+            <div id="#computerScoreboard">
+                Computer: 0
+            </div>
+        </div>
+    
+        <div class="selectionBox">
+            <button id="0" class="rockBox">
+                rock
+            </button>
+            <button id="1" class="paperBox">
+                paper
+            </button>
+            <button id="2" class="scissorsBox">
+                scissors
+            </button>
+        </div>
     </div>
-
-    <div class="selectionBox">
-        <button id="0" class="rockBox">
-            rock
-        </button>
-        <button id="1" class="paperBox">
-            paper
-        </button>
-        <button id="2" class="scissorsBox">
-            scissors
-        </button>
-    </div>
-</div>
-
+</body>
 <!--JavaScript-->
 <script src="./script.js" defer></script>
-<body>
-    
-</body>
 </html>
