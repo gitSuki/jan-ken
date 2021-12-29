@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box; /* Keeps box size consistent regardless of margin/padding/etc */
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family:'Courier New', Courier, monospace, "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none; /* Removes link underlines */
 }
 
@@ -18,17 +18,17 @@ body { /* removes default margin and padding on body */
 
 .videoBackground {
     position: fixed;
-    top: 20px;
+    top: 0;
     right: 0;
     min-width: 100%;
     min-height: 100%;
 }
 
 .header {
-    position: fixed;
+    position: relative;
     width: 100%;
     background:linear-gradient(0.15turn, #1c222b, #000000);
-    color: white;
+    color: rgb(231, 189, 82);
     font-size: 40px;
     font-weight: bold;
     text-align: center;
@@ -54,6 +54,7 @@ body { /* removes default margin and padding on body */
     background-color: black;
     opacity: 0.8;
     border-radius: 25px;
+    width: 50em;
 }
 
 .roundHeader,
